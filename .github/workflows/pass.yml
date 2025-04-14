@@ -1,0 +1,11 @@
+name: HW1-P Success
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show success
+        run: echo "這是成功的 PR"
+      - name: Python pass
+        run: python -c "print('Everything is OK!')"
