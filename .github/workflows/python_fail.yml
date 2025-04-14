@@ -1,0 +1,15 @@
+name: Python Fail Action
+
+on: [pull_request]
+
+jobs:
+  fail-with-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Python script that fails
+        run: |
+          python -c "raise Exception('This is a simulated failure')"
