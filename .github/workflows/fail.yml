@@ -1,0 +1,12 @@
+name: Fail CI
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - 開始測試
+        run: echo "準備失敗"
+
+      - name: Step 2 - 故意出錯
+        run: python -c "raise Exception('這是預期錯誤')"
